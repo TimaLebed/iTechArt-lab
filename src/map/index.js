@@ -1,1 +1,21 @@
-export default function map(array, callback) {}
+import foreach from '../foreach';
+
+export default function map(array, callback) {
+  const result = [];
+
+  if (typeof array === 'function') {
+    const func = array;
+
+    foreach(this.result, (item, index, self) => {
+      result.push(func(item, index, self));
+    });
+  } else {
+    foreach(array, (item, index, self) => {
+      result.push(callback(item, index, self));
+    });
+  }
+
+  this.result = result;
+
+  return Array.isArray(array) ? result : this;
+}
