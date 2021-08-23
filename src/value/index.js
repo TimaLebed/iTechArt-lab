@@ -1,1 +1,3 @@
-export default function take(array, n) {}
+export default function value() {
+  return this.result;
+}
