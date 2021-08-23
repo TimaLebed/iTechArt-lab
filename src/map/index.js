@@ -9,13 +9,13 @@ export default function map(array, callback) {
     foreach(this.result, (item, index, self) => {
       result.push(func(item, index, self));
     });
+
+    this.result = result;
   } else {
     foreach(array, (item, index, self) => {
       result.push(callback(item, index, self));
     });
   }
-
-  this.result = result;
 
   return Array.isArray(array) ? result : this;
 }

@@ -10,4 +10,6 @@ export default function skip(array, n) {
   for (let i = n; i < array.length; i += 1) {
     result.push(array[i]);
   }
+
+  return Array.isArray(array) ? result : this;
 }

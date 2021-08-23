@@ -11,6 +11,8 @@ export default function reduce(array, callback, initialValue) {
         ? func(initVal, item, index, self)
         : item;
     });
+
+    this.result = initVal;
   } else {
     foreach(array, (item, index, self) => {
       initVal = initVal !== undefined
@@ -18,8 +20,6 @@ export default function reduce(array, callback, initialValue) {
         : item;
     });
   }
-
-  this.result = initVal;
 
   return Array.isArray(array) ? initVal : this;
 }

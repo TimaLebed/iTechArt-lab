@@ -10,5 +10,3 @@ import value from './src/value';
 export {
   filter, foreach, map, reduce, skip, take, chain, value,
 };
-
-console.log(filter());

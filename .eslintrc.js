@@ -10,6 +10,14 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  rules: {
-  },
+  overrides: [
+    {
+      files: [
+        '**/*.test.js',
+      ],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };
